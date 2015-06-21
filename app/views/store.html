@@ -1,0 +1,20 @@
+<p>Search <input type="text" ng-model="search">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Fruit:</th>
+      <th>Price:</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr align="center" ng-repeat="product in products | filter:search">
+    <td class="col-sm-3"><a href="#/products/{{product.sdk}}"><img width="60" height="60" ng-src="{{product.image}}" /></a></td>
+    <td class="col-sm-3"><span>{{ product.name }}</span></td>
+    <td class="col-sm-3"><span>{{ product.price | currency}}</span></td>
+    <td class="col-sm-3"><button ng-click="addCart(product.sdk, quant)" class="btn btn-success">Add to Cart</button><input ng-model="quant" style="width: 45px; margin-left: 5px;" type="number" value="1" min="1"></td>
+  </tr>
+  </tbody>
+</table>
+<br />

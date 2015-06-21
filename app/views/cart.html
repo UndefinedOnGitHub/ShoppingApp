@@ -1,0 +1,25 @@
+<div>
+<p>Your Items:</p>
+<img ng-repeat="pic in cartFin" src="{{pic.image}}">
+</div>
+<br />
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Item:</th>
+      <th>Price:</th>
+      <th>Quantity:</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr align="center" ng-repeat="item in getCart()">
+    <td class="col-sm-3"><span>{{ item.name }}</span></td>
+    <td class="col-sm-3"><span>{{ item.price | currency }}</span></td>
+    <td class="col-sm-3"><p>{{ cart[item.sdk] }}</p></td>
+  </tr>
+  <tr>
+    <td>Total:</td>
+    <td>{{getTotal() | currency }}</td>
+  </tr>
+  </tbody>
+</table>
